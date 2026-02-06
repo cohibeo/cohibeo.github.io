@@ -1,0 +1,253 @@
+/*
+Fonts used:
+
+1. "Source Sans 3", system-ui, sans-serif;
+- Title (600 weight)
+- Headers (500 weight)
+
+2. "IBM Plex Sans", system-ui, sans-serif;
+- Paragraphs (400 weight)
+- Tables (400 weight)
+- Captions (300 weight)
+
+"JetBrains Mono", system-ui, sans-serif;
+- Code (400 weight)
+- Inline data (500 weight)
+- Side labels (600 weight)
+
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Typography */
+body {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #111;
+}
+
+h1, h2, h3, h4 {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+/* Code & Data */
+code, .mono {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 20, 28, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 1000;
+}
+
+.nav-links a {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  margin: 0 0.75rem;
+
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.4);
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Hero Layout */
+.hero-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  padding: 2.5rem 4rem;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.hero-title h1 {
+  font-size: 3rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title p {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.6);
+}
+
+.hero-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255,255,255,0.08),
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 4;
+}
+
+.side-label.right {
+  position: static;
+  right: 1.5rem;
+  left: auto;
+  color: rgba(255,255,255,0.35);
+}
+
+.interactive-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: auto;
+}
+
+
+/* Left Triangle */
+#section-left {
+  background-color: #ffffff;
+  clip-path: polygon(
+    0 0,
+    0 100%,
+    92% 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Right Triangle */
+#section-right {
+  background: radial-gradient(
+    ellipse at 30% 40%,
+    #141420 0%,
+    #0b0b12 40%,
+    #07070a 100%
+  );
+  clip-path: polygon(
+    8% 0,
+    100% 0,
+    100% 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+#section-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 35%,
+    rgba(255,255,255,0.03) 45%,
+    transparent 55%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Vertical Side Layout*/
+.side-label {
+  position: fixed;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6); /* placeholder */
+  z-index: 2;
+}
+
+
+/* Scroll/Table Section */
+#section-table {
+  width: 100%;
+  padding: 10vh 10vw;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mono-table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: rgba(0,0,0,0.5);
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.mono-table td {
+  padding: 2rem;
+  border: 1px solid rgba(0,0,0,0.2);
+  text-align: center;
+  vertical-align: middle;
+}
