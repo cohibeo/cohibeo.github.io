@@ -205,23 +205,6 @@ canvas {
   height: 100vh;
 }
 
-/* Vertical Side Layout*/
-.side-label {
-  position: fixed;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%) rotate(180deg);
-  writing-mode: vertical-rl;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.6); /* placeholder */
-  z-index: 2;
-}
-
-
 /* Scroll/Table Section */
 #section-table {
   width: 100%;
@@ -250,4 +233,110 @@ canvas {
   border: 1px solid rgba(0,0,0,0.2);
   text-align: center;
   vertical-align: middle;
+}
+
+/* Vertical Side Layout*/
+.side-label {
+  position: fixed;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6); /* placeholder */
+  z-index: 2;
+}
+
+/* Page Content */
+.page {
+  padding: 120px 10vw 10vh;
+  background: #fafafa;
+  min-height: 100vh;
+}
+
+.page-hero {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.page-hero p {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 0.6rem;
+}
+
+.content-section {
+  max-width: 1050px;
+  margin: 0 auto 3rem;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(320px, 1.6fr);
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: #ffffff;
+  padding: 1.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.card p + p {
+  margin-top: 1rem;
+}
+
+.image-frame {
+  background: #ffffff;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.image-frame img {
+  width: 100%;
+  display: block;
+}
+
+.caption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.55);
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 110px 7vw 8vh;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
 }
