@@ -13,5 +13,6 @@ This project serves as a personal portfolio/look into what I have accomplished.
 * Currently taking AP Physics C: Mechanics and AP Calculus BC
 * Completed various hands-on projects
 
+---
 > You may encounter many defeats, but you must not be defeated. In fact, it may be necessary to encounter the defeats, so you can know who you are, what you can rise from, how you can still come out of it.
 >— Maya Angelou
