@@ -51,6 +51,26 @@ code, .mono {
   font-weight: 400;
 }
 
+/* Quotes */
+.quote {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.75);
+  border-left: 2px solid rgba(0, 0, 0, 0.15);
+  padding-left: 1.2rem;
+}
+
+.quote-attribution {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.45);
+  margin-bottom: 1.5rem;
+}
+
 /* Navbar */
 .navbar {
   position: fixed;
@@ -93,6 +113,46 @@ code, .mono {
 
 .nav-links a:hover::after {
   transform: scaleX(1);
+}
+
+/* Vertical Side Layout*/
+.side-label {
+  position: fixed;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.side-stripe {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 3.5rem;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 110px 7vw 8vh;
+  }
+
+  .side-label {
+    display: none;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Hero Layout */
@@ -235,45 +295,7 @@ canvas {
   vertical-align: middle;
 }
 
-/* Vertical Side Layout*/
-.side-label {
-  position: fixed;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%) rotate(180deg);
-  writing-mode: vertical-rl;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  font-size: 1rem;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.6);
-  z-index: 2;
-}
 
-.side-stripe {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 3.5rem;
-  width: 1px;
-  background: rgba(0, 0, 0, 0.1);
-  z-index: 1;
-}
-
-@media (max-width: 900px) {
-  .page {
-    padding: 110px 7vw 8vh;
-  }
-
-  .side-label {
-    display: none;
-  }
-
-  .split {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* Page Content */
 .page {
