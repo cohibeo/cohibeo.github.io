@@ -202,13 +202,6 @@ code, .mono {
   z-index: 4;
 }
 
-.side-label.right {
-  position: static;
-  right: 1.5rem;
-  left: auto;
-  color: rgba(255,255,255,0.35);
-}
-
 .interactive-layer {
   position: absolute;
   inset: 0;
