@@ -159,7 +159,7 @@ function drawStars() {
         const targetX = s.baseX;
         const targetY = currentPathY + s.offsetY; // Maintains individual path
 
-        // 2. Radial repulsion
+        // Radial repulsion
         if (mouse.active) {
             const dx = s.x - mouse.x;
             const dy = s.y - mouse.y;
