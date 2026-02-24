@@ -149,6 +149,7 @@ code, .mono {
     padding: 110px 7vw 8vh;
   }
 
+  .side-stripe,
   .side-label {
     display: none;
   }
